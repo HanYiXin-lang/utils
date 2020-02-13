@@ -276,6 +276,41 @@ public class DataUtil {
 		return getLastDayOfMonth(theDate);
 	}
 	
+	/**
+	 *
+	 * @Title: getDateByBefore
+	 * @Description: 返回昨天的时间
+	 * @return
+	 * @return: Date
+	 */
+	public static Date getDateByBefore() {
+		// 用系统时间初始化 Calender
+		Calendar c = Calendar.getInstance();
+		// 让系统时间减去 1 天
+		c.add(Calendar.DAY_OF_MONTH, -1);
+		return c.getTime();
+	}
+	
+	  /**
+     * 
+     * @Title: randomDate 
+     * @Description: 随机返回一个在start--end 之间的日期
+     * @param start
+     * @param end
+     * @return
+     * @return: Date
+     */
+	public static Date randomDate(Date start,Date end) {
+		//获取开始日期的毫秒数
+		long t1 = start.getTime();
+		//获取结束日期的毫秒数
+		long t2 = end.getTime();
+		
+		long t =(long) ((Math.random() * (t2-t1)+1) +t1);
+		
+		return new Date(t);
+	}
+	
 	
 	public static void main(String[] args) {
 		
